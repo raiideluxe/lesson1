@@ -1,5 +1,14 @@
-numbers = [7.713, 0.208, 6.336, 7.488, 4.985, 2.248, 1.981, 7.605, 1.691, 0.883, 6.854, 9.534, 0.039, 5.122, 8.126, 6.125, 7.218, 2.919, 9.178, 7.146, 5.425, 1.422, 3.733, 6.741, 4.418]
-for i in range(23):
-    if i>10: numbers[i] = 0
-p = numbers.index(max(numbers))
-print(p)
+def is_point_in_circle(x,y):
+    return (x-1)**2 + y**2 <= 2**2 and (x-1)**2 + y**2>=1**2
+def is_point_in_rectangle(x,y):
+    return abs(x-4)<2 and abs(y-2)<3
+x = int(input('x:'))
+y = int(input('y:'))
+if is_point_in_circle(x,y) and is_point_in_rectangle(x,y):
+    print('yes yes')
+if is_point_in_circle(x,y):
+    print('yes no')
+if is_point_in_rectangle(x,y):
+    print('no yes')
+else:
+    print('no no')
