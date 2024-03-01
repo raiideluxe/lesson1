@@ -1,16 +1,15 @@
-def teylor_logarithm(x):
+def ln_1_plus_x(x):
     result = 0
     term = x
-    term_number = 2
+    n = 1
 
-    while abs(term) > 1e-6:
+    while abs(term) >= 10**-6:
         result += term
-        term *= -x * (term_number-1)/term_number
-        term_number+=1
+        n += 1
+        term = (-1)**(n-1) * x**n / n
 
-    return round(x,8)
+    return round(result, 8)
 
-x = input()
-
-result = teylor_logarithm(x)
+x = 0.5
+result = ln_1_plus_x(x)
 print(result)
